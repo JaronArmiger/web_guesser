@@ -5,8 +5,10 @@ set :num, rand(101)
 
 get '/' do
 	guess = params['guess'].to_i
-	message = check_guess(guess)
-	erb :index, :locals => {:num => settings.num, :message => message}
+	message= check_guess(guess)
+	erb :index, :locals => {:num => settings.num, 
+							:message => message
+							}
 end
 
 def check_guess(guess)
